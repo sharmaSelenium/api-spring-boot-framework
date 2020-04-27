@@ -66,7 +66,7 @@ class SitServiceTest extends BaseTest {
             GivenISearchHotel(VALID_COUNTRY).
             AndIRetrieveHotelsByGeoSuggestion().
             ThenISeeHotelListIsRetrieved().
-            AndIVerifyCountryInAllHotels(VALID_COUNTRY);
+            AndIVerifyCountryInLocations(VALID_COUNTRY);
     }
 
     @Test

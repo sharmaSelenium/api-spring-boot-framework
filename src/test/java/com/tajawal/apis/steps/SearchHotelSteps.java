@@ -66,7 +66,7 @@ public class SearchHotelSteps extends BaseSteps<SearchHotelSteps> {
     }
 
     @Step
-    public SearchHotelSteps AndIVerifyCountryInAllHotels(QueryHotelSearch queryHotelSearch){
+    public SearchHotelSteps AndIVerifyCountryInLocations(QueryHotelSearch queryHotelSearch){
         geoSuggestHotelProvider.getLocations().
             forEach(location -> {
                 assertThat.fieldIsEqual(queryHotelSearch.getValue().toLowerCase(),
