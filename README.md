@@ -19,16 +19,16 @@ API Back-end automation framework using spring dependencies , Junit-5 test runne
     mvn clean test   
     
 4. **Test Data Creation Examples:**
-    Scenario 1:
+    - **Scenario 1:_**
     Hotel Data - QueryHotelSearch enum data and display type enum
     
-    Scenario 2:
+    -**Scenario 2:_**
     Rooms Guest Mapping is done in RoomGuestMapping enums
     example : TWO_ROOMS_2_ADT_2_CHD_2_ADT_1_CHD_PARIS("Paris","1-2-2#2-3-1")
     2 rooms are separated by # 
     1-2-2 -> represent First room configuration , 1-> Room 1 , 2-> 2 Adults and 2-> 2 Child
     
-    Dynamically generated test data: 
+    -**Dynamically generated test data:_**
      GivenIGenerateSearchHotelPayload(ONE_ROOM_2_ADT_1_CHD_PARIS, 2 ,3), method will take 
      3 arguments
         - 1st arg is room guest mapping as explained above
