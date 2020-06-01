@@ -8,6 +8,7 @@
  */
 package com.tajawal.apis.utils;
 
+import java.util.Optional;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
@@ -18,8 +19,26 @@ import org.springframework.util.MultiValueMap;
 public class QueryParamUtil {
     public MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
 
-    public QueryParamUtil addQueryParam(String key, String val) {
-        queryParams.add(key,val);
+    public QueryParamUtil addQueryParam(String key, String value) {
+        this.queryParams.add(key, value);
+        return this;
+    }
+
+    public String getQueryKeyValue(String key) {
+        return Optional
+            .of(this.queryParams)
+            .orElse(null)
+            .getFirst(key);
+    }
+
+    public QueryParamUtil removeQueryParam(String key) {
+        queryParams.remove(key);
+        return this;
+    }
+
+    public QueryParamUtil addQueryParams(MultiValueMap<String, String> queryParams) {
+        this.clearQueryParams();
+        this.queryParams.addAll(queryParams);
         return this;
     }
 
